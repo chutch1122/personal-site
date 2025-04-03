@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --no-hmr",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production",
+    "serve:ssr": "node dist/personal/server/server.mjs",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:personal": "node dist/personal/server/server.mjs"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
