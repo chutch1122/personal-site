@@ -11,9 +11,9 @@
         From: "opacity-100"
         To: "opacity-0"
     -->
-    <div class="fixed inset-0 bg-gray-900/80" aria-hidden="true"></div>
+    <div *ngIf="isSidebarOpen()" aria-hidden="true" class="fixed inset-0 bg-gray-900/80"></div>
 
-    <div class="fixed inset-0 flex">
+    <div *ngIf="isSidebarOpen()" class="fixed inset-0 flex">
       <!--
         Off-canvas menu, show/hide based on off-canvas menu state.
 
@@ -36,7 +36,7 @@
             To: "opacity-0"
         -->
         <div class="absolute top-0 left-full flex w-16 justify-center pt-5">
-          <button type="button" class="-m-2.5 p-2.5">
+          <button (click)="toggleSidebar()" class="-m-2.5 p-2.5" type="button">
             <span class="sr-only">Close sidebar</span>
             <svg class="size-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                  aria-hidden="true" data-slot="icon">
@@ -46,7 +46,8 @@
         </div>
 
         <!-- Sidebar component, swap this element with another sidebar if you like -->
-        <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
+        <div *ngIf="isSidebarOpen()"
+             class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-2 ring-1 ring-white/10">
           <div class="flex pt-5 h-16 shrink-0 items-center gap-x-3">
             <img class="h-10 w-auto" src="cameron-logo-transparent.png" alt="Cameron Hutchison">
             <span class="text-white text-lg font-semibold">
@@ -89,8 +90,9 @@
     </div>
   </div>
 
-  <div class="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-xs sm:px-6 lg:hidden">
-    <button type="button" class="-m-2.5 p-2.5 text-gray-400 lg:hidden">
+  <div *ngIf="!isSidebarOpen()"
+       class="sticky top-0 z-40 flex items-center gap-x-6 bg-gray-900 px-4 py-4 shadow-xs sm:px-6 lg:hidden">
+    <button (click)="toggleSidebar()" class="-m-2.5 p-2.5 text-gray-400 lg:hidden" type="button">
       <span class="sr-only">Open sidebar</span>
       <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
            data-slot="icon">

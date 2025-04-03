@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NavItemComponent } from './common/nav/nav-item/nav-item.component';
 import { CommonModule } from '@angular/common';
@@ -21,8 +21,13 @@ export class AppComponent {
   );
 
   path = toSignal(this._path$, {initialValue: ''});
+  isSidebarOpen = signal(true);
 
   isCurrent(path: string): boolean {
     return this.path().includes(path);
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen.update(value => !value);
   }
 }
