@@ -21,7 +21,7 @@ export class AppComponent {
   );
 
   path = toSignal(this._path$, {initialValue: ''});
-  isSidebarOpen = signal(true);
+  isSidebarOpen = signal(false);
 
   isCurrent(path: string): boolean {
     return this.path().includes(path);
