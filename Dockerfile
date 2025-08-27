@@ -1,5 +1,5 @@
 # Use Node.js for building the Angular SSR app
-FROM node:18 AS builder
+FROM node:22 AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -14,7 +14,7 @@ COPY . .
 RUN npm run build:ssr
 
 # Use a minimal Node.js image to run the SSR server
-FROM node:18-alpine AS server
+FROM node:22-alpine AS server
 
 # Set the metadata as described above
 LABEL org.opencontainers.image.source https://github.com/chutch1122/personal-site
