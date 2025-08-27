@@ -4,31 +4,9 @@
     This is a showcase of some of the things I’ve built — apps, tools, experiments, AI side quests, and more!
   </p>
   @if (projects.length > 0) {
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
       @for (project of projects; track project.title) {
-        <article
-          class="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
-          data-testid="project-card"
-        >
-          <div class="h-40 w-full bg-gray-100">
-            <img
-              [src]="project.image"
-              [alt]="project.imageAlt"
-              class="h-full w-full object-cover"
-            />
-          </div>
-
-          <div class="flex flex-1 flex-col gap-3 p-4">
-            <h3 class="text-base font-semibold text-gray-900 truncate">{{ project.title }}</h3>
-            <p class="text-sm text-gray-700">{{ project.description }}</p>
-
-            <div class="mt-auto flex flex-wrap gap-2">
-              @for (tech of project.technologies; track tech) {
-                <span class="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-700">{{ tech }}</span>
-              }
-            </div>
-          </div>
-        </article>
+        <app-project-card [project]="project" />
       }
     </div>
   } @else {
