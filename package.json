@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve --no-hmr",
     "build": "ng build",
+    "build:ssr": "ng build --configuration production",
+    "serve:ssr": "node dist/personal/server/server.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
