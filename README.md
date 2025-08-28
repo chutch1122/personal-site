@@ -1,59 +1,97 @@
-# Personal
+# Personal Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+This repository contains the source code for my personal website. The site serves as a hub to showcase my projects, skills, and professional journey. Built with Angular and styled using Tailwind CSS, the website is designed to be fast, responsive, and visually appealing.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Project Showcase**: Highlights various projects with descriptions, technologies used, and links to live demos or source code (if available).
+- **Responsive Design**: Optimized for viewing on devices of all sizes.
+- **Modern Tech Stack**: Built with Angular, Tailwind CSS, and Docker for containerized deployment.
+- **Server-Side Rendering**: Utilizes Angular's newer server-side rendering features for improved SEO and performance.
 
+## Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v20.19.0 or higher, required by Angular 20)
+- [Angular CLI](https://angular.dev/tools/cli)
+- [Docker](https://www.docker.com/) (optional, for containerized deployment)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/chutch1122/personal-site.git
+   cd personal-sit
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development Server
+
+Start the development server:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Navigate to `http://localhost:4200/` in your browser. The app will automatically reload if you make changes to the source files.
 
-## Code scaffolding
+### Building for Production
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+To create a production build:
 ```bash
-ng generate component component-name
+ng build --configuration production
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The build artifacts will be stored in the `dist/` directory.
 
-```bash
-ng generate --help
-```
+### Running with Docker
 
-## Building
+1. Build the Docker image:
+   ```bash
+   docker build -t personal-portfolio .
+   ```
+2. Run the container:
+   ```bash
+   docker run -p 8080:80 personal-portfolio
+   ```
+3. Open `http://localhost:8080/` in your browser.
 
-To build the project run:
+## Testing
 
-```bash
-ng build
-```
+### Unit Tests
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Run unit tests with Karma:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+### End-to-End Tests
 
-For end-to-end (e2e) testing, run:
-
+Run e2e tests (if configured):
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Folder Structure
 
-## Additional Resources
+- **src/app**: Contains the Angular components, services, and routing configuration.
+- **src/assets**: Static assets like images and icons.
+- **public**: Publicly accessible files, including the favicon and logos.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, reach out to me at [your-email@example.com](mailto:your-email@example.com).
