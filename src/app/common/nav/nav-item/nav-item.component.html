@@ -2,11 +2,12 @@
   data-test="nav-item"
   class="group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold cursor-pointer"
   [ngClass]="current() ? 'bg-gray-800 text-white' : 'text-gray-400 hover:bg-gray-800 hover:text-white'">
-  <span
-    data-test="nav-item-icon"
-    class="material-symbols-outlined"
-    [class.hidden]="!hasIcon()">
-    {{ icon() }}
-  </span>
+  @if (hasIcon()) {
+    <span
+      data-test="nav-item-icon"
+      class="material-symbols-outlined">
+      {{ icon() }}
+    </span>
+  }
   <ng-content></ng-content>
 </div>

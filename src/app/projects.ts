@@ -4,6 +4,8 @@ export interface Project {
   image: string;
   imageAlt: string;
   technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -30,5 +32,7 @@ export const PROJECTS: Project[] = [
     image: '/cameron-logo.png',
     imageAlt: 'Screenshot placeholder for Personal Website',
     technologies: ['Angular', 'Tailwind CSS', 'Docker'],
+    liveUrl: 'https://chutchison.com',
+    githubUrl: 'https://github.com/chutch1122/personal-site',
   },
 ];
