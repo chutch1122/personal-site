@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
   {
     title: 'Ranking System (Deprecated)',
     description:
-      'An application that tracks player win/losses for various office break-time games complete with ELO-based leaderboards, streaks, statistics, and seasonal resets.',
+      'An application that tracks player win/losses for various office break-time games complete with ELO-based leaderboards, streaks, statistics, and seasonal resets. (Note: The live demo database is reset every 30 minutes.)',
     image: '/assets/ranking-system/ranking-system-thumbnail.png',
     imageAlt: 'Screenshot placeholder for Ranking System',
     technologies: ['Angular', 'Spring Boot', 'Java', 'MySQL', 'Flyway', 'Docker'],
