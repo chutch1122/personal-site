@@ -1,3 +1,9 @@
+export interface Repository {
+  label?: string;
+  url: string;
+  provider?: 'GitHub' | 'GitLab' | 'Bitbucket' | 'Other';
+}
+
 export interface Project {
   title: string;
   description: string;
@@ -5,7 +11,7 @@ export interface Project {
   imageAlt: string;
   technologies: string[];
   liveUrl?: string;
-  githubUrl?: string;
+  repositories?: Repository[];
 }
 
 export const PROJECTS: Project[] = [
@@ -18,12 +24,17 @@ export const PROJECTS: Project[] = [
     technologies: ['Angular', 'FastAPI', 'LangChain', 'OpenAI', 'ElevenLabs', 'Docker'],
   },
   {
-    title: 'Ranking System',
+    title: 'Ranking System (Deprecated)',
     description:
       'An application that tracks player win/losses for various office break-time games complete with ELO-based leaderboards, streaks, statistics, and seasonal resets.',
     image: '/assets/ranking-system/ranking-system-thumbnail.png',
     imageAlt: 'Screenshot placeholder for Ranking System',
     technologies: ['Angular', 'Spring Boot', 'Java', 'MySQL', 'Flyway', 'Docker'],
+    liveUrl: 'https://rankings-legacy.demos.chutchison.com',
+    repositories: [
+      { label: 'UI Source', url: 'https://github.com/chutch1122/ranking-system-ui', provider: 'GitHub' },
+      { label: 'API Source', url: 'https://github.com/chutch1122/ranking-system-api', provider: 'GitHub' },
+    ],
   },
   {
     title: 'Personal Website',
@@ -33,6 +44,8 @@ export const PROJECTS: Project[] = [
     imageAlt: 'Screenshot placeholder for Personal Website',
     technologies: ['Angular', 'Tailwind CSS', 'Docker'],
     liveUrl: 'https://chutchison.com',
-    githubUrl: 'https://github.com/chutch1122/personal-site',
+    repositories: [
+      { label: 'Source', url: 'https://github.com/chutch1122/personal-site', provider: 'GitHub' },
+    ],
   },
 ];
