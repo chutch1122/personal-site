@@ -94,4 +94,4 @@ This project is licensed under the GNU Affero General Public License v3.0. See t
 
 ## Contact
 
-For questions or feedback, reach out to me at [your-email@example.com](mailto:your-email@example.com).
+For questions or feedback, create an issue or find me on social media.
